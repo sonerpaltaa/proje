@@ -1,9 +1,0 @@
-language: java
-sudo: false # false for faster builds
-script: 
-  - "mvn -f AdvancedJava/pom.xml -Dmaven.javadoc.skip=false clean install cobertura:cobertura checkstyle:checkstyle pmd:pmd javadoc:javadoc javadoc:aggregate site"
-  - "mvn -f SoftwareDevEnvAndTools/pom.xml -Dmaven.javadoc.skip=false clean install cobertura:cobertura checkstyle:checkstyle pmd:pmd javadoc:javadoc javadoc:aggregate site pmd:pmd"
-jdk:
-  - oraclejdk8
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
